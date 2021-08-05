@@ -1,7 +1,9 @@
 <% @post.each do |p| %>
-<% if current_user.id == p.user_id%>
 <p><%= p.content %> </p>
 <p><%= p.created_at %></p>
-<p>_______________</p>
+<% if current_user.id == p.user_id%>
+<%= link_to "Edit", edit_post_path(p.id) %> | 
+<%= link_to "Delete", post_path(p.id), method: :delete, data: { confirm: "Are you sure?" } %>
 <%end%>
+<p>_______________</p>
 <%end%>
