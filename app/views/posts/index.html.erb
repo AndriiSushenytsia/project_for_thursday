@@ -1,0 +1,7 @@
+<% @post.each do |p| %>
+<% if current_user.id == p.user_id%>
+<p><%= p.content %> </p>
+<p><%= p.created_at %></p>
+<p>_______________</p>
+<%end%>
+<%end%>
