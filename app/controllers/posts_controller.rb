@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :find_post, only: [:edit, :update, :destroy]
   def show
   end
 
@@ -10,7 +11,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def create
@@ -25,7 +25,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "Post has been updated"
       redirect_to posts_url
@@ -33,7 +32,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     flash[:notice] = "Post has been deleted!"
     redirect_to posts_url
@@ -43,5 +41,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:content)
+  end
+
+  def find_post
+    @post = Post.find(params[:id])
   end
 end
