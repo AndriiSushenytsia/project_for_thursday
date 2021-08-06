@@ -1,5 +1,5 @@
+<div class="form">
 <h3>Create new post</h3>
-
 <%= form_with scope: :post, url: posts_path, local: true do |f| %>
 <p>
 <%= f.text_area :content %>
@@ -9,3 +9,4 @@
 <%= f.submit %>
 </p>
 <% end %>
+</div>
