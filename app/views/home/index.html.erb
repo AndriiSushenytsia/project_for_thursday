@@ -1,7 +1,10 @@
-<h1>Welcome <% if user_signed_in? %> 
-<%= current_user.email %></h1>
-<%= render "posts/new" %>
-<%= link_to "Show all posts", posts_url %>
- <% else %> stranger </h1>
-<% end %>
-
+<div class="index">
+  <div>
+    <h1>Welcome <% if user_signed_in? %>
+        <%= current_user.email %></h1>
+      <%= render "posts/new" %>
+    <% else %> stranger </h1>
+  <% end %>
+</div>
+  <%= render "shared/all_posts" %>
+</div>

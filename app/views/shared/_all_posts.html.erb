@@ -1,0 +1,11 @@
+<div class="posts">
+<% @all_posts.each do |p| %>
+    <p id="text"><%= p.content %> </p>
+    <p id="time">Created at: <%= p.created_at %></p>
+    <% if user_signed_in? && current_user.id == p.user_id%>
+      <%= link_to "Edit", edit_post_path(p.id) %> | 
+      <%= link_to "Delete", post_path(p.id), method: :delete, data: { confirm: "Are you sure?" } %>
+    <%end%>
+    <p>_______________</p>
+  <%end%>
+</div>

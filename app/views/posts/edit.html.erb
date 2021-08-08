@@ -1,13 +1,15 @@
-<div class="form">
-<h3>Update your post</h3>
-
-<%= form_with(model: @post, local: true ) do |f| %>
-<p>
-<%= f.text_area :content %>
-<%= hidden_field :user_id, :value => current_user.id %>
-<p>
-<p>
-<%= f.submit %>
-</p>
-<% end %>
-</div>
+<div class="index">
+  <div class="form">
+    <h3>Update your post</h3>
+    <%= simple_form_for @post do |f| %>
+      <p>
+        <%= f.text_area :content %>
+        <%= hidden_field :user_id, :value => current_user.id %>
+        <p>
+          <p>
+            <%= f.button :submit %>
+          </p>
+        <% end %>
+      </div>
+      <%= render "shared/all_posts" %>
+    </div>

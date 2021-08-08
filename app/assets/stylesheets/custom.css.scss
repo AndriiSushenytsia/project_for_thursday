@@ -1,18 +1,42 @@
-body {
-  margin-left: 30px;
+.main {
+
+  .index {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1em;
+  }
+  margin: 0px 30px 30px 30px;
+
+  .posts {
+    padding: 25px;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+  }
 }
 
-
 #time {
-    font-size: 10px;
-  }
+  font-size: 10px;
+}
+
+#text {
+  display: flex;
+}
 
 textarea {
-  height: 100px;
+  height: 200px;
   width: 300px;
 }
 
 .notice {
+  margin-top: 20px;
   color: green;
   font-style: italic;
 }
+
+.alert {
+  margin-top: 20px;
+  color: red;
+  font-style: italic;
+}
+
