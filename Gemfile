@@ -10,6 +10,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
+gem "simple_form", "~> 5.1"
 
 group :development, :test do
 
@@ -23,6 +24,7 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
+  gem 'annotate'
 end
 
 group :test do
@@ -39,4 +41,6 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "simple_form", "~> 5.1"
+group :development, :test do
+  gem 'rspec-rails'
+end
