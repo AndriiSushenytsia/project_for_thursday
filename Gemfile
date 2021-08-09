@@ -11,11 +11,13 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem "simple_form", "~> 5.1"
+gem "rexml"
 
 group :development, :test do
 
   gem 'sqlite3', '~> 1.4' 
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails"
 end
 
 group :development do
@@ -40,7 +42,3 @@ group :production do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-group :development, :test do
-  gem 'rspec-rails'
-end
