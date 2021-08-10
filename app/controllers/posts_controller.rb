@@ -7,11 +7,14 @@ class PostsController < ApplicationController
 
   def show; end
 
-  def new; end
+  def new
+    @post = Post.new
+    @all_posts = Post.all
+  end
 
   def edit
     @all_posts = Post.all
-   end
+  end
 
   def create
     @post = current_user.posts.build(post_params)
@@ -26,7 +29,6 @@ class PostsController < ApplicationController
   end
 
   def update
-
     if @post.update(post_params)
       flash[:notice] = "Post has been updated"
       redirect_to root_url
@@ -37,7 +39,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    
     @post.destroy
     flash[:notice] = "Post has been deleted!"
     redirect_to root_url

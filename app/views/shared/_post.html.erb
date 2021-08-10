@@ -1,0 +1,8 @@
+<p id="text"><%= post.content %> </p>
+<p id="small-text">Created at: <%= post.created_at %> Author: <%= post.user.first_name %></p>
+<p id="small-text">Author: <%= post.user.first_name %> <%= post.user.last_name %></p>
+<% if user_signed_in? && current_user.id == post.user_id%>
+  <%= link_to "Edit", edit_post_path(post.id) %> | 
+  <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<%end%>
+<p>_______________</p>

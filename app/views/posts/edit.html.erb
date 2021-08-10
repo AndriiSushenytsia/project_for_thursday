@@ -11,5 +11,7 @@
           </p>
         <% end %>
       </div>
-      <%= render "shared/all_posts" %>
+      <div class="posts">
+      <%= render partial: "shared/post", collection: @all_posts %>
+    </div>
     </div>

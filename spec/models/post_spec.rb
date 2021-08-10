@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
+#
 require "rails_helper"
 
 RSpec.describe Post, type: :model do
@@ -6,7 +16,7 @@ RSpec.describe Post, type: :model do
   it "has content" do
 
     post = Post.new(content: "hello", user: current_user)
-    expect(post.content).equal? "hello"
+    expect(post.content).equal? "hell"
   end
 
   it "can't be empty" do
