@@ -1,7 +1,7 @@
 <div class="index">
   <div class="form">
     <h1>Welcome <% if user_signed_in? %> <%= current_user.email %></h1>
-      <h3><%= link_to "Create new post", new_post_path %></h3>
+      <h3><%= link_to "Create new post", new_current_post_path %></h3>
     <% else %> stranger </h1>
   <% end %>
 </div>
