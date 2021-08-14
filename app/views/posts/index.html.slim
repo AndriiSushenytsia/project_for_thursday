@@ -1,0 +1,3 @@
+- unless @collection.nil?
+  = render partial: "post", collection: @collection
+  = will_paginate @collection

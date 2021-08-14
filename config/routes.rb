@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resources :posts
   
-  namespace :current do
+  namespace :account do
     resources :posts
   end
 
-  root to: "current/posts#index"
+  root to: "posts#index"
 end

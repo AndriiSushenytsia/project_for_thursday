@@ -1,0 +1,22 @@
+.index
+  .form
+    h1
+      | Welcome 
+      - if user_signed_in?
+        = current_user.email
+    h3
+      | Create new post
+    = simple_form_for [:account, @post] do |f|
+      p
+        = f.text_field :title
+        = f.text_field :description
+        = f.text_area :content
+        = hidden_field :user_id, :value => current_user.id
+      p
+
+      p
+        = f.button :submit
+    - else
+      |  stranger 
+  .posts
+    = render partial: "post", collection: @all_posts

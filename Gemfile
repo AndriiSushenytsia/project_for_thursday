@@ -13,6 +13,7 @@ gem 'devise'
 gem "simple_form", "~> 5.1"
 gem "rexml"
 gem "slim-rails"
+gem "will_paginate"
 
 group :development, :test do
 

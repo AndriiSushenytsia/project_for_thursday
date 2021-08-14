@@ -1,5 +1,4 @@
 .main {
-
   .index {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -15,12 +14,8 @@
   }
 }
 
-#small-text {
+.small-text {
   font-size: 10px;
-}
-
-#text {
-  display: flex;
 }
 
 textarea {
@@ -39,4 +34,3 @@ textarea {
   color: red;
   font-style: italic;
 }
-

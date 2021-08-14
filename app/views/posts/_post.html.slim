@@ -1,0 +1,19 @@
+= unless p.nil?
+
+p.text
+  = post.title 
+p.text
+  = post.description
+p.small-text
+  | Created at: 
+  = post.created_at
+p.small-text
+  | Author: 
+  = post.user.first_name
+  |  
+  = post.user.last_name
+p
+  = link_to "Read full post", post_path(post.id)
+
+p
+  | _______________
