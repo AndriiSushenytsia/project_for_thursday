@@ -1,8 +1,8 @@
-class Account::PostsController < Account::LoginController
+class Account::PostsController < Account::ProfileController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @collection = Post.where(user_id: current_user.id).paginate(page: params[:page], per_page: 5)
+    @posts = Post.where(user_id: current_user.id).paginate(page: params[:page], per_page: 5)
   end
 
   def show; end
@@ -16,7 +16,7 @@ class Account::PostsController < Account::LoginController
 
     if @post.save
       flash[:notice] = "Post has been created!"
-      redirect_to account_posts_path
+      redirect_to account_user_url(current_user)
     else
       flash[:alert] = @post.errors.full_messages[0]
       render :new
@@ -29,7 +29,7 @@ class Account::PostsController < Account::LoginController
 
     if @post.update(post_params)
       flash[:notice] = "Post has been updated"
-      redirect_to account_posts_path
+      redirect_to account_user_url(current_user)
     else
       flash[:alert] = @post.errors.full_messages[0]
       render :edit
@@ -39,7 +39,7 @@ class Account::PostsController < Account::LoginController
   def destroy
     @post.destroy
     flash[:notice] = "Post has been deleted!"
-    redirect_to account_posts_path
+    redirect_to account_user_url(current_user)
   end
 
   private

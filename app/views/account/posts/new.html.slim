@@ -2,8 +2,7 @@
   .form
     h1
       | Welcome 
-      - if user_signed_in?
-        = current_user.email
+      = current_user.first_name
     h3
       | Create new post
     = simple_form_for [:account, @post] do |f|
@@ -16,7 +15,3 @@
 
       p
         = f.button :submit
-    - else
-      |  stranger 
-  .posts
-    = render partial: "post", collection: @all_posts

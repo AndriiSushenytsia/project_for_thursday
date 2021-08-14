@@ -7,7 +7,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-success.bg-gradient
       ul.navbar-nav.ms-auto
         - if user_signed_in?
           li.nav-item
-            = link_to "#{current_user.first_name} #{current_user.last_name}", account_posts_path, class: "nav-link active"
+            = link_to "#{current_user.first_name} #{current_user.last_name}", account_user_url(current_user), class: "nav-link active"
           li.nav-item
             = link_to "Sign out", destroy_user_session_path, method: :delete,  class: "nav-link active"
         - else

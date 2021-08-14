@@ -1,7 +1,6 @@
 .index
   .form
-    h3
-      | Update your post
+    h3 Update your post
     = simple_form_for [:account, @post] do |f|
       p
         = f.text_field :title
@@ -12,5 +11,3 @@
 
       p
         = f.button :submit
-  .posts
-    = render partial: "post", collection: @all_posts

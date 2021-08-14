@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   namespace :account do
     resources :posts
+    resources :users, only: [:show]
   end
 
   root to: "posts#index"
