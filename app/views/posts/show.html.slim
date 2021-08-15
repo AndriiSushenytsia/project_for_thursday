@@ -1,13 +1,16 @@
-p#text
-  = @post.title
-p#text
-  = @post.description
-p#text
-  = @post.content
-p#small-text
-  | Created at: 
-  = @post.created_at
-p#small-text
-  | Author: 
-  = @post.user.first_name
-  = @post.user.last_name
+p
+  .card
+    .card-header
+      = @post.user.first_name
+      |  
+      = @post.user.last_name
+      |   
+      span.small-text
+        = time_ago_in_words(@post.created_at)
+        |  ago
+    .card-body
+      h5.card-title 
+        = @post.title
+      p.card-text   
+        = @post.content
+      a.btn.btn-secondary href="#{root_path}"  Go back
