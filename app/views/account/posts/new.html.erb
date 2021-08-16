@@ -1,0 +1,18 @@
+<div class="form-background">
+  <div class="content">
+    <h3>Create post</h3>
+    <%= simple_form_for [:account, @post ] do |f| %>
+      <div class="form-inputs">
+        <%= f.input :title, required: true %>
+        <%= f.input :description, required: true %>
+        <%= f.input :content, input_html: { class: "content-input" }, required: true %>
+        <%= hidden_field :user_id, :value => current_user.id%>
+      </div>
+      <br>
+      <div class="form-actions">
+        <%= f.button :submit, "Create" %>
+        <%= link_to "Go back", account_user_path(current_user), class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

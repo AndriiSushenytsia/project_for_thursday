@@ -1,0 +1,18 @@
+p
+  .card
+    .card-header
+      = post.user.first_name
+      |  
+      = post.user.last_name
+      |   
+      span.small-text
+        = time_ago_in_words(post.created_at)
+        |  ago
+    .card-body
+      h5.card-title 
+        = post.title
+      p.card-text 
+        = post.description
+      a.btn.btn-secondary href="#{post_path(post.id)}"  Read full post
+
+

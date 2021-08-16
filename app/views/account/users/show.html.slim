@@ -1,0 +1,14 @@
+.grid
+  .info
+    h1
+      | Welcome 
+      = current_user.first_name
+    a.btn.btn-secondary href="#{account_posts_path}"  All your posts
+    |  
+    a.btn.btn-primary href="#{edit_user_registration_path}"  Profile
+    |  
+    a.btn.btn-success href="#{new_account_post_path}"  New post
+  .posts
+    h2 Recent Activity
+    - unless @posts.nil?
+    = render partial: "account/posts/post", collection: @posts

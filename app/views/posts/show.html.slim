@@ -1,0 +1,16 @@
+p
+  .card
+    .card-header
+      = @post.user.first_name
+      |  
+      = @post.user.last_name
+      |   
+      span.small-text
+        = time_ago_in_words(@post.created_at)
+        |  ago
+    .card-body
+      h5.card-title 
+        = @post.title
+      p.card-text   
+        = simple_format(@post.content)
+      a.btn.btn-secondary href="#{root_path}"  Go back

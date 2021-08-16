@@ -12,6 +12,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem "simple_form", "~> 5.1"
 gem "rexml"
+gem "slim-rails"
+gem "kaminari"
+gem "bootstrap5-kaminari-views"
 
 group :development, :test do
 
@@ -36,6 +39,7 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem "shoulda-matchers", "~> 5.0"
 end
 
 group :production do
