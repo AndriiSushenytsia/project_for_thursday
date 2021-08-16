@@ -12,5 +12,5 @@ p
       h5.card-title 
         = @post.title
       p.card-text   
-        = @post.content
+        = simple_format(@post.content)
       a.btn.btn-secondary href="#{root_path}"  Go back

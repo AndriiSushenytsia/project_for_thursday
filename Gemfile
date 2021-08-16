@@ -13,7 +13,8 @@ gem 'devise'
 gem "simple_form", "~> 5.1"
 gem "rexml"
 gem "slim-rails"
-gem "will_paginate"
+gem "kaminari"
+gem "bootstrap5-kaminari-views"
 
 group :development, :test do
 

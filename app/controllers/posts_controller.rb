@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.paginate(page: params[:page], per_page: 5)
+    @posts = Post.all.page params[:page]
   end
 
   def show

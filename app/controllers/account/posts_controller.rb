@@ -1,8 +1,8 @@
-class Account::PostsController < Account::ProfileController
+class Account::PostsController < Account::AccountController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.where(user_id: current_user.id).paginate(page: params[:page], per_page: 5)
+    @posts = current_user.posts.page params[:page]
   end
 
   def show; end
@@ -26,7 +26,6 @@ class Account::PostsController < Account::ProfileController
   def edit; end
 
   def update
-
     if @post.update(post_params)
       flash[:notice] = "Post has been updated"
       redirect_to account_user_url(current_user)

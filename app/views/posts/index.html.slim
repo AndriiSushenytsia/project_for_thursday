@@ -1,5 +1,5 @@
 - unless @posts.nil?
   = render partial: "post", collection: @posts
-  = will_paginate @posts
+  = paginate @posts, theme: 'bootstrap-5', pagination_class: "pagination-lg flex-wrap justify-content-center"
 
 

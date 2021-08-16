@@ -11,9 +11,11 @@
 #  user_id     :integer
 #
 class Post < ApplicationRecord
-  belongs_to :user
   default_scope -> { order(created_at: :desc) }
-  validates :content, presence: true, length: { maximum: 2000 }
+
+  belongs_to :user
+
   validates :title, presence: true
   validates :description, presence: true
+  validates :content, presence: true, length: { maximum: 2000 }
 end

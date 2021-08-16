@@ -1,3 +1,5 @@
+<div class="form-background">
+<div class="content">
 <h2>Forgot your password?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -9,10 +11,12 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
   </div>
-
+<br>
   <div class="form-actions">
     <%= f.button :submit, "Send me reset password instructions" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+</div>
+</div>
