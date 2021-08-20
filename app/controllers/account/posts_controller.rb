@@ -18,7 +18,6 @@ class Account::PostsController < Account::AccountController
       flash[:notice] = "Post has been created!"
       redirect_to account_user_url(current_user)
     else
-      flash[:alert] = @post.errors.full_messages[0]
       render :new
     end
   end
@@ -30,7 +29,6 @@ class Account::PostsController < Account::AccountController
       flash[:notice] = "Post has been updated"
       redirect_to account_user_url(current_user)
     else
-      flash[:alert] = @post.errors.full_messages[0]
       render :edit
     end
   end
